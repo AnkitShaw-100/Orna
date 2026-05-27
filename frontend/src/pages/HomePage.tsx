@@ -9,7 +9,7 @@ import { SiteLayout } from "@/layouts/SiteLayout";
 
 export function HomePage() {
   useEffect(() => {
-    document.title = "AUREL - Fine Jewelry E-Commerce Website";
+    document.title = "Orna - Fine Jewelry E-Commerce Website";
   }, []);
 
   return (

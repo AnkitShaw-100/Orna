@@ -4,7 +4,7 @@ const cols = [
   {
     title: "Company",
     links: [
-      "About AUREL",
+      "About Orna",
       "Store Locator",
       "Careers",
       "Offers",
@@ -96,7 +96,7 @@ export function Footer() {
 
       <div className="border-t border-cream/10">
         <p className="mx-auto max-w-7xl px-6 lg:px-10 py-5 text-center text-[11px] tracking-luxury uppercase text-cream/50">
-          Copyright 2026 AUREL. All Rights Reserved
+          Copyright 2026 Orna. All Rights Reserved
         </p>
       </div>
     </footer>
