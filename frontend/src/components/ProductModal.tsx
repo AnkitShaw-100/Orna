@@ -63,7 +63,7 @@ export function ProductModal({ product, onClose }: Props) {
         </button>
 
         {/* 3D Viewer */}
-        <div className="relative aspect-square lg:aspect-auto lg:min-h-[560px] overflow-hidden">
+        <div className="relative aspect-square lg:aspect-auto lg:min-h-140 overflow-hidden bg-[radial-gradient(circle_at_top,rgba(255,248,238,0.98),rgba(243,234,223,0.92)_45%,rgba(229,214,196,0.88)_100%)]">
           <div className="absolute top-4 left-4 z-10 flex items-center gap-2 text-[10px] tracking-luxury uppercase bg-background/80 px-3 py-1.5 rounded-full">
             <RotateCw className="size-3 animate-shimmer text-gold" />
             Drag to rotate · Scroll to zoom
