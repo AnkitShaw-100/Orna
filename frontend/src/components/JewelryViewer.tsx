@@ -10,24 +10,24 @@ interface Props {
 
 const SKETCHFAB_MODELS: Record<Category, { title: string; embedUrl: string }> = {
   Rings: {
-    title: "Sketchfab ring model",
+    title: "Golden Ring 3D preview",
     embedUrl:
-      "https://sketchfab.com/models/643e5e0289dc433f84f3a2accd7571af/embed?autostart=1&transparent=1&ui_infos=0&ui_controls=1&ui_watermark=0",
+      "https://sketchfab.com/3d-models/518-jewelry-golden-ring-7e58184f99f14a8db95aa38f6b8f733a/embed?autostart=1&autospin=0.15&transparent=1&ui_infos=0&ui_controls=1&ui_start=0&ui_watermark=0",
   },
   Necklaces: {
-    title: "Sketchfab necklace model",
+    title: "Gold Necklace 3D preview",
     embedUrl:
-      "https://sketchfab.com/models/40509546dc084521a0d4e7da5dd9bfe6/embed?autostart=1&transparent=1&ui_infos=0&ui_controls=1&ui_watermark=0",
+      "https://sketchfab.com/3d-models/gold-necklace-chain-8bb2ebea4fbd4a3a9b21cba9f5d5fdc8/embed?autostart=1&autospin=0.15&transparent=1&ui_infos=0&ui_controls=1&ui_start=0&ui_watermark=0",
   },
   Earrings: {
-    title: "Gold Earrings",
+    title: "Gold Earrings 3D preview",
     embedUrl:
-      "https://sketchfab.com/models/fa51411b736a4306889e197226f1b806/embed?autostart=1&transparent=1&ui_infos=0&ui_controls=1&ui_watermark=0",
+      "https://sketchfab.com/3d-models/gold-earrings-fa51411b736a4306889e197226f1b806/embed?autostart=1&autospin=0.15&transparent=1&ui_infos=0&ui_controls=0&ui_start=0&ui_watermark=0",
   },
   Bracelets: {
-    title: "Bracelet 1 (Rose)",
+    title: "Gold Bangle 3D preview",
     embedUrl:
-      "https://sketchfab.com/models/f6c11eb4147d4b7794b53002c7aae288/embed?autostart=1&transparent=1&ui_infos=0&ui_controls=1&ui_watermark=0",
+      "https://sketchfab.com/3d-models/3cd669be85fb45d18fb722731d00eb94/embed?autostart=1&autospin=0.15&transparent=1&ui_infos=0&ui_controls=1&ui_start=0&ui_watermark=0",
   },
 };
 
