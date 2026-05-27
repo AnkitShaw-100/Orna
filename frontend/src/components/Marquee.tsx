@@ -13,7 +13,10 @@ export function Marquee() {
     <div className="bg-espresso text-cream py-3 overflow-hidden border-y border-gold/20">
       <div className="flex animate-marquee whitespace-nowrap">
         {doubled.map((t, i) => (
-          <span key={i} className="mx-8 text-xs tracking-luxury uppercase flex items-center gap-8">
+          <span
+            key={i}
+            className="mx-8 text-xs tracking-luxury uppercase flex items-center gap-8"
+          >
             {t} <span className="text-gold">✦</span>
           </span>
         ))}

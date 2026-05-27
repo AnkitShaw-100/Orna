@@ -1,14 +1,19 @@
 export function Hero() {
   return (
-    <section className="bg-secondary">
+    <section id="home" className="bg-secondary scroll-mt-24">
       <div className="mx-auto max-w-7xl px-6 lg:px-10 py-10 lg:py-14">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-6">
-          {/* Headline tile */}
           <div className="lg:col-span-3 flex flex-col justify-between bg-secondary p-2">
             <div className="animate-fade-up">
-              <p className="text-[11px] tracking-luxury uppercase text-foreground/60 mb-3">New Arrival</p>
+              <p className="text-[11px] tracking-luxury uppercase text-foreground/60 mb-3">
+                New Arrival
+              </p>
               <h1 className="font-display text-5xl md:text-6xl lg:text-7xl leading-[0.95] text-espresso">
-                Timeless.<br/>Crafted.<br/><em className="text-gold not-italic">Yours.</em>
+                Timeless.
+                <br />
+                Crafted.
+                <br />
+                <em className="text-gold not-italic">Yours.</em>
               </h1>
             </div>
             <img
@@ -19,8 +24,10 @@ export function Hero() {
             />
           </div>
 
-          {/* Centerpiece */}
-          <div className="lg:col-span-6 relative aspect-[4/5] md:aspect-[5/6] overflow-hidden animate-fade-up" style={{ animationDelay: "0.1s" }}>
+          <div
+            className="lg:col-span-6 relative aspect-[4/5] md:aspect-[5/6] overflow-hidden animate-fade-up"
+            style={{ animationDelay: "0.1s" }}
+          >
             <img
               src="https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=1400&q=80"
               alt="Hero jewelry editorial"
@@ -29,8 +36,10 @@ export function Hero() {
             <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
           </div>
 
-          {/* Right column */}
-          <div className="lg:col-span-3 flex flex-col gap-4 animate-fade-up" style={{ animationDelay: "0.2s" }}>
+          <div
+            className="lg:col-span-3 flex flex-col gap-4 animate-fade-up"
+            style={{ animationDelay: "0.2s" }}
+          >
             <div className="aspect-square overflow-hidden">
               <img
                 src="https://images.unsplash.com/photo-1611652022419-a9419f74343d?w=800&q=80"
@@ -39,13 +48,19 @@ export function Hero() {
               />
             </div>
             <div className="bg-background/70 backdrop-blur p-6">
-              <h3 className="font-display text-2xl text-espresso mb-2">Orna</h3>
+              <h3 className="font-display text-2xl text-espresso mb-2">
+                AUREL
+              </h3>
               <p className="text-sm text-foreground/70 leading-relaxed mb-4">
-                Discover a world where beauty meets craftsmanship — every piece of jewelry tells a story.
+                Discover a world where beauty meets craftsmanship - every piece
+                of jewelry tells a story.
               </p>
-              <button className="text-xs tracking-luxury uppercase border-b border-espresso pb-1 hover:border-gold hover:text-gold transition">
+              <a
+                href="#collections"
+                className="inline-flex text-xs tracking-luxury uppercase border-b border-espresso pb-1 hover:border-gold hover:text-gold transition"
+              >
                 Shop the edit
-              </button>
+              </a>
             </div>
           </div>
         </div>

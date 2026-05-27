@@ -1,4 +1,4 @@
-import { X, Trash2 } from "lucide-react";
+import { Trash2, X } from "lucide-react";
 import { useCart } from "@/lib/cart-context";
 
 export function CartDrawer() {
@@ -28,19 +28,32 @@ export function CartDrawer() {
 
         <div className="flex-1 overflow-y-auto px-6 py-5">
           {items.length === 0 ? (
-            <p className="text-sm text-foreground/60 text-center py-20">Your bag is empty.</p>
+            <p className="text-sm text-foreground/60 text-center py-20">
+              Your bag is empty.
+            </p>
           ) : (
             <ul className="space-y-5">
               {items.map((i) => (
-                <li key={i.uid} className="flex gap-4 border-b border-border pb-5">
-                  <img src={i.product.image} alt="" className="size-20 object-cover" />
+                <li
+                  key={i.uid}
+                  className="flex gap-4 border-b border-border pb-5"
+                >
+                  <img
+                    src={i.product.image}
+                    alt=""
+                    className="size-20 object-cover"
+                  />
                   <div className="flex-1 min-w-0">
                     <div className="flex justify-between gap-2">
-                      <h4 className="font-display text-lg text-espresso leading-tight">{i.product.name}</h4>
-                      <p className="font-display text-base text-gold">₹{i.product.price.toLocaleString()}</p>
+                      <h4 className="font-display text-lg text-espresso leading-tight">
+                        {i.product.name}
+                      </h4>
+                      <p className="font-display text-base text-gold">
+                        Rs. {i.product.price.toLocaleString()}
+                      </p>
                     </div>
                     <p className="text-[11px] text-foreground/55 mt-1">
-                      {i.karat} · {i.diamondSize} · {i.metalColor}
+                      {i.karat} / {i.diamondSize} / {i.metalColor}
                     </p>
                     <button
                       onClick={() => remove(i.uid)}
@@ -58,8 +71,12 @@ export function CartDrawer() {
         {items.length > 0 && (
           <div className="border-t border-border px-6 py-5 space-y-4">
             <div className="flex justify-between">
-              <span className="text-xs tracking-luxury uppercase">Subtotal</span>
-              <span className="font-display text-xl text-espresso">₹{total.toLocaleString()}</span>
+              <span className="text-xs tracking-luxury uppercase">
+                Subtotal
+              </span>
+              <span className="font-display text-xl text-espresso">
+                Rs. {total.toLocaleString()}
+              </span>
             </div>
             <button className="w-full py-4 text-xs tracking-luxury uppercase bg-espresso text-cream hover:bg-gold hover:text-gold-foreground transition">
               Checkout

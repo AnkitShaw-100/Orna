@@ -37,7 +37,9 @@ export function CartProvider({ children }: { children: ReactNode }) {
     setItems((prev) => prev.filter((i) => i.uid !== uid));
 
   return (
-    <Ctx.Provider value={{ items, add, remove, count: items.length, open, setOpen }}>
+    <Ctx.Provider
+      value={{ items, add, remove, count: items.length, open, setOpen }}
+    >
       {children}
     </Ctx.Provider>
   );

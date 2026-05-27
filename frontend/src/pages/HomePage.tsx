@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 
+import { AboutSection } from "@/components/AboutSection";
 import { CategoryGrid } from "@/components/CategoryGrid";
 import { Hero } from "@/components/Hero";
 import { Marquee } from "@/components/Marquee";
@@ -8,15 +9,16 @@ import { SiteLayout } from "@/layouts/SiteLayout";
 
 export function HomePage() {
   useEffect(() => {
-    document.title = "Orna — Timeless Jewelry, Crafted to Last";
+    document.title = "AUREL - Fine Jewelry E-Commerce Website";
   }, []);
 
   return (
     <SiteLayout>
       <Hero />
       <Marquee />
-      <CategoryGrid />
       <ProductGrid />
+      <CategoryGrid />
+      <AboutSection />
     </SiteLayout>
   );
 }

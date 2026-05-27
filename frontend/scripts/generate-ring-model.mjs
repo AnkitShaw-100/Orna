@@ -2,7 +2,9 @@ import fs from "node:fs";
 import path from "node:path";
 import * as THREE from "three";
 
-const outputPath = path.resolve("d:/10_Github/01_Important/28_Assignment/frontend/public/models/ring.gltf");
+const outputPath = path.resolve(
+  "d:/10_Github/01_Important/28_Assignment/frontend/public/models/ring.gltf",
+);
 fs.mkdirSync(path.dirname(outputPath), { recursive: true });
 
 const geometry = new THREE.TorusGeometry(1, 0.12, 48, 128);
@@ -25,7 +27,11 @@ function appendChunk(typedArray, target) {
     byteOffset += padding;
   }
 
-  const chunk = Buffer.from(typedArray.buffer, typedArray.byteOffset, typedArray.byteLength);
+  const chunk = Buffer.from(
+    typedArray.buffer,
+    typedArray.byteOffset,
+    typedArray.byteLength,
+  );
   bufferViews.push({
     buffer: 0,
     byteOffset,

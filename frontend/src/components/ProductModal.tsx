@@ -1,8 +1,13 @@
 import { useEffect, useState } from "react";
-import { X, RotateCw, Check } from "lucide-react";
+import { Check, RotateCw, X } from "lucide-react";
 import {
-  KARATS, DIAMOND_SIZES, METAL_COLORS,
-  type Product, type Karat, type DiamondSize, type MetalColor,
+  DIAMOND_SIZES,
+  KARATS,
+  METAL_COLORS,
+  type DiamondSize,
+  type Karat,
+  type MetalColor,
+  type Product,
 } from "@/lib/products";
 import { useCart } from "@/lib/cart-context";
 import { JewelryViewer } from "./JewelryViewer";
@@ -21,12 +26,18 @@ export function ProductModal({ product, onClose }: Props) {
 
   useEffect(() => {
     if (product) {
-      setKarat("18K"); setSize("0.50 ct"); setMetal("Yellow Gold"); setAdded(false);
+      setKarat("18K");
+      setSize("0.50 ct");
+      setMetal("Yellow Gold");
+      setAdded(false);
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "";
     }
-    return () => { document.body.style.overflow = ""; };
+
+    return () => {
+      document.body.style.overflow = "";
+    };
   }, [product]);
 
   useEffect(() => {
@@ -62,11 +73,10 @@ export function ProductModal({ product, onClose }: Props) {
           <X className="size-4" />
         </button>
 
-        {/* 3D Viewer */}
         <div className="relative aspect-square lg:aspect-auto lg:min-h-140 overflow-hidden bg-[radial-gradient(circle_at_top,rgba(255,248,238,0.98),rgba(243,234,223,0.92)_45%,rgba(229,214,196,0.88)_100%)]">
-          <div className="absolute top-4 left-4 z-10 flex items-center gap-2 text-[10px] tracking-luxury uppercase bg-background/80 px-3 py-1.5 rounded-full">
+          <div className="absolute top-4 left-4 z-20 flex items-center gap-2 text-[10px] tracking-luxury uppercase bg-background/80 px-3 py-1.5 rounded-full">
             <RotateCw className="size-3 animate-shimmer text-gold" />
-            Drag to rotate · Scroll to zoom
+            360° Interactive View
           </div>
 
           <JewelryViewer
@@ -81,32 +91,43 @@ export function ProductModal({ product, onClose }: Props) {
           </div>
         </div>
 
-        {/* Configuration */}
         <div className="p-6 md:p-10 flex flex-col">
-          <p className="text-[11px] tracking-luxury uppercase text-gold mb-2">{product.type}</p>
-          <h2 className="font-display text-3xl md:text-4xl text-espresso">{product.name}</h2>
-          <p className="font-display text-2xl text-foreground mt-3">₹{product.price.toLocaleString()}</p>
+          <p className="text-[11px] tracking-luxury uppercase text-gold mb-2">
+            {product.type}
+          </p>
+          <h2 className="font-display text-3xl md:text-4xl text-espresso">
+            {product.name}
+          </h2>
+          <p className="font-display text-2xl text-foreground mt-3">
+            Rs. {product.price.toLocaleString()}
+          </p>
 
           <p className="text-sm text-foreground/65 mt-4 leading-relaxed">
-            A meticulously hand-finished piece, set with conflict-free stones and an heirloom-grade finish that endures generations.
+            A meticulously hand-finished piece, set with conflict-free stones
+            and an heirloom-grade finish that endures generations.
           </p>
 
           <div className="mt-8 space-y-7">
-            {/* Karat */}
             <Group label="Karat">
               {KARATS.map((k) => (
-                <Toggle key={k} active={karat === k} onClick={() => setKarat(k)}>{k}</Toggle>
+                <Toggle
+                  key={k}
+                  active={karat === k}
+                  onClick={() => setKarat(k)}
+                >
+                  {k}
+                </Toggle>
               ))}
             </Group>
 
-            {/* Diamond size */}
             <Group label="Diamond Size">
               {DIAMOND_SIZES.map((s) => (
-                <Toggle key={s} active={size === s} onClick={() => setSize(s)}>{s}</Toggle>
+                <Toggle key={s} active={size === s} onClick={() => setSize(s)}>
+                  {s}
+                </Toggle>
               ))}
             </Group>
 
-            {/* Metal color */}
             <Group label="Metal Color">
               {METAL_COLORS.map((m) => (
                 <button
@@ -152,16 +173,32 @@ export function ProductModal({ product, onClose }: Props) {
   );
 }
 
-function Group({ label, children }: { label: string; children: React.ReactNode }) {
+function Group({
+  label,
+  children,
+}: {
+  label: string;
+  children: React.ReactNode;
+}) {
   return (
     <div>
-      <p className="text-[11px] tracking-luxury uppercase text-foreground/55 mb-3">{label}</p>
+      <p className="text-[11px] tracking-luxury uppercase text-foreground/55 mb-3">
+        {label}
+      </p>
       <div className="flex flex-wrap gap-2">{children}</div>
     </div>
   );
 }
 
-function Toggle({ active, onClick, children }: { active: boolean; onClick: () => void; children: React.ReactNode }) {
+function Toggle({
+  active,
+  onClick,
+  children,
+}: {
+  active: boolean;
+  onClick: () => void;
+  children: React.ReactNode;
+}) {
   return (
     <button
       onClick={onClick}

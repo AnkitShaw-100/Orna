@@ -1,4 +1,5 @@
 import { Box, Plus } from "lucide-react";
+import { useCart } from "@/lib/cart-context";
 import type { Product } from "@/lib/products";
 
 const badgeStyles: Record<string, string> = {
@@ -15,45 +16,52 @@ interface Props {
 
 const PREVIEW_MODELS: Record<
   Product["type"],
-  { title: string; embedUrl: string }
+  { title: string; thumbnailUrl: string }
 > = {
   Rings: {
     title: "Golden Ring 3D preview",
-    embedUrl:
-      "https://sketchfab.com/3d-models/518-jewelry-golden-ring-7e58184f99f14a8db95aa38f6b8f733a/embed?autostart=1&autospin=0.15&transparent=1&ui_infos=0&ui_controls=0&ui_start=0&ui_watermark=0",
+    thumbnailUrl:
+      "https://media.sketchfab.com/models/7e58184f99f14a8db95aa38f6b8f733a/thumbnails/194d5e8ce1954297ba7f3ad22d484dc5/720x405.jpeg",
   },
   Necklaces: {
     title: "Gold Necklace 3D preview",
-    embedUrl:
-      "https://sketchfab.com/3d-models/gold-necklace-chain-8bb2ebea4fbd4a3a9b21cba9f5d5fdc8/embed?autostart=1&autospin=0.15&transparent=1&ui_infos=0&ui_controls=0&ui_start=0&ui_watermark=0",
+    thumbnailUrl:
+      "https://media.sketchfab.com/models/8bb2ebea4fbd4a3a9b21cba9f5d5fdc8/thumbnails/90855a8cf2d04502bd0e8e0783a5d431/abbe597d11444393a151d4d11be40f35.jpeg",
   },
   Earrings: {
     title: "Gold Earrings 3D preview",
-    embedUrl:
-      "https://sketchfab.com/3d-models/gold-earrings-fa51411b736a4306889e197226f1b806/embed?autostart=1&autospin=0.15&transparent=1&ui_infos=0&ui_controls=0&ui_start=0&ui_watermark=0",
+    thumbnailUrl:
+      "https://media.sketchfab.com/models/fa51411b736a4306889e197226f1b806/thumbnails/c64b48c7d2a64fb5adb95feea6a614d5/94ad126a19a24feda64ec2a084a26c6b.jpeg",
   },
   Bracelets: {
     title: "Gold Bangle 3D preview",
-    embedUrl:
-      "https://sketchfab.com/3d-models/3cd669be85fb45d18fb722731d00eb94/embed?autostart=1&autospin=0.15&transparent=1&ui_infos=0&ui_controls=0&ui_start=0&ui_watermark=0",
+    thumbnailUrl:
+      "https://media.sketchfab.com/models/3cd669be85fb45d18fb722731d00eb94/thumbnails/cdc12ef3b1f843f3a3f84837192b2d6d/d4804b179c46419c934672a66837c988.jpeg",
   },
 };
 
 export function ProductCard({ product, onView }: Props) {
   const preview = PREVIEW_MODELS[product.type];
+  const { add } = useCart();
+
+  const handleQuickAdd = () => {
+    add({
+      product,
+      karat: "18K",
+      diamondSize: "0.50 ct",
+      metalColor: "Yellow Gold",
+    });
+  };
 
   return (
     <div className="group">
       <div className="relative aspect-4/5 overflow-hidden bg-muted">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,249,242,0.95),rgba(235,223,211,0.9)_55%,rgba(215,198,179,0.92)_100%)]" />
-        <iframe
-          key={preview.embedUrl}
-          src={preview.embedUrl}
-          title={preview.title}
+        <img
+          src={preview.thumbnailUrl}
+          alt={preview.title}
           loading="lazy"
-          className="absolute inset-0 h-full w-full border-0 pointer-events-none"
-          allow="autoplay; fullscreen; xr-spatial-tracking"
-          referrerPolicy="strict-origin-when-cross-origin"
+          className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
         />
 
         <div className="absolute inset-x-0 bottom-0 h-24 bg-linear-to-t from-espresso/35 to-transparent" />
@@ -66,17 +74,18 @@ export function ProductCard({ product, onView }: Props) {
           </span>
         )}
 
-        {/* Hover overlay */}
-        <div className="absolute inset-0 bg-espresso/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col items-center justify-center gap-3 p-4">
+        <div className="absolute inset-0 bg-espresso/35 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col items-center justify-center gap-3 p-4">
           <button
+            type="button"
             onClick={() => onView(product)}
-            className="w-full max-w-50 flex items-center justify-center gap-2 bg-background text-foreground py-3 text-xs tracking-luxury uppercase hover:bg-gold hover:text-gold-foreground transition-colors"
+            className="w-full max-w-54 flex items-center justify-center gap-2 bg-background text-foreground py-3 text-xs tracking-luxury uppercase hover:bg-gold hover:text-gold-foreground transition-colors"
           >
             <Box className="size-3.5" /> View in 3D
           </button>
           <button
-            onClick={() => onView(product)}
-            className="w-full max-w-50 flex items-center justify-center gap-2 border border-cream text-cream py-3 text-xs tracking-luxury uppercase hover:bg-cream hover:text-espresso transition-colors"
+            type="button"
+            onClick={handleQuickAdd}
+            className="w-full max-w-54 flex items-center justify-center gap-2 border border-cream text-cream py-3 text-xs tracking-luxury uppercase hover:bg-cream hover:text-espresso transition-colors"
           >
             <Plus className="size-3.5" /> Quick Add
           </button>
