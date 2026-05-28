@@ -11,13 +11,13 @@ export function AboutSection() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           <div className="lg:col-span-5">
             <p className="text-[11px] tracking-luxury uppercase text-gold mb-3">
-              About Orna
+              About Aurel
             </p>
             <h2 className="font-display text-4xl md:text-5xl text-espresso leading-tight">
               Crafted for quiet brilliance.
             </h2>
             <p className="mt-5 text-sm md:text-base text-foreground/70 leading-relaxed">
-              Orna is built around heirloom pieces that feel personal from the
+              Aurel is built around heirloom pieces that feel personal from the
               first wear. Every setting, polish, clasp, and curve is considered
               with the restraint of fine design and the warmth of human craft.
             </p>

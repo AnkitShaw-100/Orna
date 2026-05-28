@@ -1,6 +1,6 @@
-# Orna Fine Jewelry E-Commerce Website
+# Aurel Fine Jewelry E-Commerce Website
 
-Orna is a responsive jewelry e-commerce frontend built for the M2M Creative Solutions internship assignment. It uses React, TypeScript, Vite, and Tailwind CSS to present a premium fine-jewelry shopping experience with product cards, category browsing, a cart drawer, and a 3D product view modal.
+Aurel is a responsive jewelry e-commerce frontend built for the M2M Creative Solutions internship assignment. It uses React, TypeScript, Vite, and Tailwind CSS to present a premium fine-jewelry shopping experience with product cards, category browsing, a cart drawer, and a 3D product view modal.
 
 ## Tech Stack
 
@@ -80,4 +80,4 @@ Include:
 
 Suggested description:
 
-Orna is a luxury jewelry storefront focused on quiet editorial design, warm premium tones, refined typography, and interactive product exploration. The site includes responsive featured collection browsing, hover product actions, a 3D product modal, configurable jewelry options, and cart persistence during the session. The implementation uses React, TypeScript, Vite, Tailwind CSS, and componentized state management for a production-ready frontend structure.
+Aurel is a luxury jewelry storefront focused on quiet editorial design, warm premium tones, refined typography, and interactive product exploration. The site includes responsive featured collection browsing, hover product actions, a 3D product modal, configurable jewelry options, and cart persistence during the session. The implementation uses React, TypeScript, Vite, Tailwind CSS, and componentized state management for a production-ready frontend structure.

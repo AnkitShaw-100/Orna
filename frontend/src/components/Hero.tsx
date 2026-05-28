@@ -49,7 +49,7 @@ export function Hero() {
             </div>
             <div className="bg-background/70 backdrop-blur p-6">
               <h3 className="font-display text-2xl text-espresso mb-2">
-                Orna
+                Aurel
               </h3>
               <p className="text-sm text-foreground/70 leading-relaxed mb-4">
                 Discover a world where beauty meets craftsmanship - every piece

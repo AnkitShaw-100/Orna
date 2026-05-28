@@ -21,7 +21,7 @@ export function Header() {
           to="/"
           className="font-display text-2xl md:text-3xl font-medium text-espresso"
         >
-          Orna<span className="text-gold">.</span>
+          Aurel<span className="text-gold">.</span>
         </Link>
 
         <nav className="hidden md:flex items-center gap-10 text-xs tracking-luxury uppercase text-foreground/80">

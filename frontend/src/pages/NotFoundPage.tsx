@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export function NotFoundPage() {
   useEffect(() => {
-    document.title = "Page not found | Orna";
+    document.title = "Page not found | Aurel";
   }, []);
 
   return (
