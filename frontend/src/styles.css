@@ -92,6 +92,19 @@
   }
 }
 
+@layer components {
+  @media (min-width: 640px) and (hover: hover) and (pointer: fine) {
+    .product-card-actions {
+      opacity: 0;
+    }
+
+    .group:hover .product-card-actions,
+    .group:focus-within .product-card-actions {
+      opacity: 1;
+    }
+  }
+}
+
 @layer utilities {
   .font-display {
     font-family: var(--font-display);

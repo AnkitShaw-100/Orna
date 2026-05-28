@@ -74,27 +74,27 @@ export function ProductCard({ product, onView }: Props) {
           </span>
         )}
 
-        <div className="absolute inset-0 bg-espresso/35 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col items-center justify-center gap-3 p-4">
+        <div className="product-card-actions absolute inset-x-0 bottom-0 z-10 flex flex-col gap-2 bg-linear-to-t from-espresso/80 via-espresso/45 to-transparent p-3 pt-12 transition-opacity duration-500 sm:inset-0 sm:items-center sm:justify-center sm:gap-3 sm:bg-espresso/35 sm:p-4">
           <button
             type="button"
             onClick={() => onView(product)}
-            className="w-full max-w-54 flex items-center justify-center gap-2 bg-background text-foreground py-3 text-xs tracking-luxury uppercase hover:bg-gold hover:text-gold-foreground transition-colors"
+            className="w-full sm:max-w-54 flex items-center justify-center gap-2 bg-background text-foreground px-3 py-3 text-[11px] sm:text-xs tracking-luxury uppercase hover:bg-gold hover:text-gold-foreground transition-colors"
           >
             <Box className="size-3.5" /> View in 3D
           </button>
           <button
             type="button"
             onClick={handleQuickAdd}
-            className="w-full max-w-54 flex items-center justify-center gap-2 border border-cream text-cream py-3 text-xs tracking-luxury uppercase hover:bg-cream hover:text-espresso transition-colors"
+            className="w-full sm:max-w-54 flex items-center justify-center gap-2 border border-cream text-cream px-3 py-3 text-[11px] sm:text-xs tracking-luxury uppercase hover:bg-cream hover:text-espresso transition-colors"
           >
             <Plus className="size-3.5" /> Quick Add
           </button>
         </div>
       </div>
 
-      <div className="pt-4 flex items-start justify-between gap-3">
-        <div>
-          <h3 className="font-display text-lg text-espresso leading-tight">
+      <div className="pt-3 sm:pt-4 flex flex-col gap-1.5 sm:flex-row sm:items-start sm:justify-between sm:gap-3">
+        <div className="min-w-0">
+          <h3 className="font-display text-xl sm:text-lg text-espresso leading-tight">
             {product.name}
           </h3>
           <p className="text-xs text-foreground/55 mt-0.5">{product.type}</p>
